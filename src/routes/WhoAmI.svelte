@@ -1,14 +1,16 @@
 <script>
-  var id = "sect-1";
   import linkIcon from "$lib/images/link.png";
 </script>
 
-<section class="flex flex-col realtive text-white font-semibold space-y-2" {id}>
+<section
+  class="flex flex-col realtive text-white font-semibold space-y-2 mx-[10%]"
+  id="sect-1"
+>
   <h1
     id="sectionHeader"
-    class="text-3xl inline-flex flex-row -ml-9 gap-3 mt-32"
+    class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl"
   >
-    <a href={"#" + id} class="self-center">
+    <a href="sect-1" class="self-center">
       <img
         src={linkIcon}
         class="opacity-0 text-base transition-all duration-100 relative h-5"
@@ -20,7 +22,7 @@
   </h1>
 
   <div
-    class="flex flex-col flex-wrap text-left text-lg font-normal ml-3 border-b-[1]"
+    class="flex flex-col flex-wrap text-left font-normal ml-3 border-b-2 border-white/20 pb-3 text-base lg:text-lg"
   >
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem ullam, nulla
@@ -28,8 +30,6 @@
       alias provident ipsam, in ipsum similique cumque accusantium?
     </p>
   </div>
-
-  <div class="h-[2px] bg-white/20 w-full mb-5"></div>
 </section>
 
 <style>

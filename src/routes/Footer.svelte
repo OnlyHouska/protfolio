@@ -6,8 +6,8 @@
 
 <footer
   class="
-    mt-10 text-white relative bg-[#201f1f] flex flex-col shadow-md justify-center z-50 pt-5 pb-5 px-10
-    lg:pb-10 text-center lg:px-20"
+    mt-10 text-white text-center relative bg-[#201f1f] flex flex-col shadow-md justify-center z-50 pt-5 pb-5 px-10
+    lg:pb-10 lg:px-20"
 >
   <div class="h-[2px] bg-white/10 w-full mb-5"></div>
   <div class="flex flex-row justify-center mb-5">
@@ -27,5 +27,5 @@
     </a>
     <h2 class="text-lg lg:text-xl font-bold">OnlyHouska</h2>
   </div>
-  <p class="text-xs">Copyright &copy; {year} OnlyHouska</p>
+  <p class="text-xs lg:text-sm">Copyright &copy; {year} OnlyHouska</p>
 </footer>

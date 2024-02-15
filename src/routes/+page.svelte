@@ -39,12 +39,6 @@
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/",
     },
-    {
-      label: "Example",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
-      link: "https://example.com/",
-    },
   ];
 
   function getInfo(index = 0, get = "") {
@@ -67,7 +61,7 @@
   <title>Portfolio</title>
 </svelte:head>
 
-<sections class="flex flex-col gap-32 mx-[10%]">
+<sections class="flex flex-col gap-32 overflow-x-hidden">
   <WhoAmI />
 
   <section
