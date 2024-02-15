@@ -66,7 +66,7 @@
 
   <section
     class="flex flex-row flex-wrap gap-10 w-full justify-center"
-    id="sect-2"
+    id="creations"
   >
     {#each tiles as tile}
       <Tile

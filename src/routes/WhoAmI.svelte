@@ -4,13 +4,13 @@
 
 <section
   class="flex flex-col realtive text-white font-semibold space-y-2 mx-[10%]"
-  id="sect-1"
+  id="#about"
 >
   <h1
     id="sectionHeader"
     class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl"
   >
-    <a href="sect-1" class="self-center">
+    <a href="#about" class="self-center">
       <img
         src={linkIcon}
         class="opacity-0 text-base transition-all duration-100 relative h-5"

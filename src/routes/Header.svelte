@@ -11,10 +11,13 @@
     var goUp: HTMLElement = document.getElementById("goUp") as HTMLElement;
     var nav: HTMLElement = document.querySelector("nav") as HTMLElement;
 
-    var checkScrollHeight : boolean = window.scrollY > 80; 
+    var checkScrollHeight = (): boolean => {
+      if (window.scrollY > 80) return true;
+      else return false;
+    };
 
     document.addEventListener("scroll", () => {
-      if (checkScrollHeight) {
+      if (checkScrollHeight()) {
         nav.style.transform = "translateY(-100px)";
         goUp.style.transform = "translateY(0)";
       } else {
@@ -27,7 +30,7 @@
       goUp.style.transform = "translateY(-10px)";
     });
     goUp.addEventListener("mouseleave", () => {
-      if (checkScrollHeight) {
+      if (checkScrollHeight()) {
         goUp.style.transform = "translateY(0px)";
       }
     });
@@ -44,7 +47,7 @@
   <a
     href="./"
     id="goUp"
-    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 h-10 aspect-square -translate-y-40 transition-all opacity-90 "
+    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 h-10 aspect-square -translate-y-40 transition-all opacity-90"
   >
     <img src={goUpImage} alt="go up" class="rotate-90" />
   </a>
@@ -59,10 +62,13 @@
 
     <ul class="flex flex-row gap-3 text-[#dedcdc] font-normal text-base h-12">
       <li class="cursor-pointer self-center md:hover:underline">
-        <a href="#sect-1">About</a>
+        <a href="#about">About</a>
       </li>
       <li class="cursor-pointer self-center md:hover:underline">
-        <a href="#sect-2">Creations</a>
+        <a href="#creations">Creations</a>
+      </li>
+      <li class="cursor-pointer self-center md:hover:underline">
+        <a href="#contact">Contact me</a>
       </li>
     </ul>
   </nav>
