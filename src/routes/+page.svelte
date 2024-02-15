@@ -1,59 +1,85 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+  import Tile from "./Tile.svelte";
+  import WhoAmI from "./WhoAmI.svelte";
+
+  const tiles = [
+    {
+      label: "Frontools",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/frontools",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+    {
+      label: "Example",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
+      link: "https://example.com/",
+    },
+  ];
+
+  function getInfo(index = 0, get = "") {
+    switch (get) {
+      case "label":
+        return tiles[index].label;
+      case "desc":
+        return tiles[index].description;
+      case "link":
+        return tiles[index].link;
+      default:
+        return "Cannot find value " + get;
+    }
+  }
+
+  let i = 0;
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+  <title>Portfolio</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+<sections class="flex flex-col gap-32 mx-[10%]">
+  <WhoAmI />
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+  <section
+    class="flex flex-row flex-wrap gap-10 w-full justify-center"
+    id="sect-2"
+  >
+    {#each tiles as tile}
+      <Tile
+        label={tile.label}
+        description={tile.description}
+        link={tile.link}
+      />
+    {/each}
+  </section>
+</sections>
