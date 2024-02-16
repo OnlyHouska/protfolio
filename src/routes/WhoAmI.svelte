@@ -8,7 +8,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl"
+    class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl hover:underline"
   >
     <a href="#about" class="self-center">
       <img

@@ -7,7 +7,11 @@
 <tile
   class="transition-all relative flex flex-col text-white mx-7 gap-2 border-gray-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide"
 >
-  <h2 class="text-xl font-semibold tracking-wider">{label}</h2>
+  <h2
+    class="text-xl font-semibold tracking-wider mb-2 border-b-2 border-white/50 pb-2"
+  >
+    {label}
+  </h2>
   <p>
     {description}
   </p>
