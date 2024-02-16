@@ -59,7 +59,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl hover:underline"
+    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline"
   >
     <a href="#contact" class="self-center">
       <img
@@ -75,11 +75,11 @@
   <div
     class="flex flex-col flex-wrap text-left font-normal ml-3 pb-3 text-base lg:text-lg"
   >
-    <social class="flex flex-row flex-wrap gap-5 justify-center">
+    <social class="flex flex-row flex-wrap gap-5 md:justify-center">
       <button
         on:click={() => copyInfo("discord")}
         id="discord"
-        class="w-fit rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -98,7 +98,7 @@
       <button
         on:click={() => copyInfo("instagram")}
         id="instagram"
-        class="w-fit rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -117,7 +117,7 @@
       <button
         on:click={() => copyInfo("github")}
         id="github"
-        class="w-fit rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -148,8 +148,25 @@
 </section>
 
 <style>
-  #sectionHeader:hover #sectionLinkIcon {
-    opacity: 1;
+  @media only screen and (min-width: 768px) {
+    #sectionHeader:hover #sectionLinkIcon {
+      opacity: 1;
+    }
+    #discord:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+    #instagram:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+    #github:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
   }
 
   #discord {
@@ -161,11 +178,6 @@
     );
     transition: 0.5s;
     background-size: 200% auto;
-  }
-  #discord:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
   }
 
   #instagram {
@@ -186,20 +198,10 @@
     transition: 0.5s;
     background-size: 200% auto;
   }
-  #instagram:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
-  }
 
   #github {
-    background-image: linear-gradient(40deg, #333 0%, #3f3e3e 30%, #333 51%);
+    background-image: linear-gradient(to left, #333 0%, #3f3e3e 30%, #333 51%);
     transition: 0.5s;
     background-size: 200% auto;
-  }
-  #github:hover {
-    background-position: right center;
-    color: #fff;
-    text-decoration: none;
   }
 </style>

@@ -21,24 +21,6 @@
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/",
     },
-    {
-      label: "Example",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
-      link: "https://example.com/",
-    },
-    {
-      label: "Example",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
-      link: "https://example.com/",
-    },
-    {
-      label: "Example",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
-      link: "https://example.com/",
-    },
   ];
 </script>
 
@@ -48,7 +30,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl hover:underline"
+    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline"
   >
     <a href="#creations" class="self-center">
       <img
@@ -61,9 +43,7 @@
     Creations
   </h1>
 
-  <tiles
-    class="flex flex-row flex-wrap gap-10 w-full justify-center"
-  >
+  <tiles class="flex flex-row flex-wrap gap-10 w-full justify-center">
     {#each tiles as tile}
       <Tile
         label={tile.label}
@@ -75,7 +55,9 @@
 </section>
 
 <style>
-  #sectionHeader:hover #sectionLinkIcon {
-    opacity: 1;
+  @media only screen and (min-width: 768px) {
+    #sectionHeader:hover #sectionLinkIcon {
+      opacity: 1;
+    }
   }
 </style>

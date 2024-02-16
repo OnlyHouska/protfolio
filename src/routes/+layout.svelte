@@ -34,7 +34,7 @@
   /* Firefox */
   :global(*) {
     scrollbar-width: auto;
-    scrollbar-color: #ad5c00 #ffffff;
+    scrollbar-color: #ad5c00 #1a1919;
   }
 
   /* Chrome, Edge, and Safari */

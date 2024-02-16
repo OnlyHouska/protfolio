@@ -8,6 +8,7 @@
 
   //Hide header on scroll && show "go up" button
   onMount(() => {
+    var lastScrollTop: number = 0;
     var goUp: HTMLElement = document.getElementById("goUp") as HTMLElement;
     var nav: HTMLElement = document.querySelector("nav") as HTMLElement;
 
@@ -16,15 +17,25 @@
       else return false;
     };
 
-    document.addEventListener("scroll", () => {
-      if (checkScrollHeight()) {
-        nav.style.transform = "translateY(-100px)";
-        goUp.style.transform = "translateY(0)";
-      } else {
-        nav.style.transform = "translateY(0px)";
-        goUp.style.transform = "translateY(-160px)";
-      }
-    });
+    window.addEventListener(
+      "scroll",
+      function () {
+        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+        if (checkScrollHeight()) {
+          if (st > lastScrollTop) {
+            // downscroll code
+            nav.style.transform = "translateY(-100px)";
+            goUp.style.transform = "translateY(0)";
+          } else if (st < lastScrollTop) {
+            // upscroll code
+            nav.style.transform = "translateY(0px)";
+            goUp.style.transform = "translateY(-160px)";
+          }
+        }
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+      },
+      false
+    );
 
     goUp.addEventListener("mouseenter", () => {
       goUp.style.transform = "translateY(-10px)";
@@ -35,6 +46,8 @@
       }
     });
   });
+
+  //TODO FIX THE FUCKING HEADER
 </script>
 
 <header>
@@ -47,7 +60,7 @@
   <a
     href="./"
     id="goUp"
-    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 h-10 aspect-square -translate-y-40 transition-all opacity-90"
+    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 aspect-square -translate-y-40 transition-all opacity-90 h-8 md:h-10"
   >
     <img src={goUpImage} alt="go up" class="rotate-90" />
   </a>
@@ -66,10 +79,14 @@
       <li class="cursor-pointer self-center md:hover:underline">
         <a href="#about">About</a>
       </li>
-      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline">
+      <li
+        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline"
+      >
         <a href="#creations">Creations</a>
       </li>
-      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline">
+      <li
+        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline"
+      >
         <a href="#contact">Contact me</a>
       </li>
     </ul>
