@@ -47,15 +47,9 @@
   }
 </script>
 
-<div
-  id="copied"
-  class="absolute bg-[#201f1f] z-50 text-white px-2 py-1 rounded-lg text-sm hidden"
->
-  Copied!
-</div>
 <section
   class="flex flex-col realtive text-white font-semibold space-y-2 mx-[10%]"
-  id="#contact"
+  id="contact"
 >
   <h1
     id="sectionHeader"

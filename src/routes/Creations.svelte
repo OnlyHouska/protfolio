@@ -26,7 +26,7 @@
 
 <section
   class="flex flex-col realtive text-white font-semibold space-y-2 mx-[10%] transition-all"
-  id="#creations"
+  id="creations"
 >
   <h1
     id="sectionHeader"

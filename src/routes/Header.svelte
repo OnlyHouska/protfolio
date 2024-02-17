@@ -47,7 +47,7 @@
     });
   });
 
-  //TODO FIX THE FUCKING HEADER
+  //TODO FIX THE FUCKNIG HEADERž
 </script>
 
 <header>
