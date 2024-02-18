@@ -20,7 +20,7 @@
     window.addEventListener(
       "scroll",
       function () {
-        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+        var st = window.scrollY || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
         if (checkScrollHeight()) {
           if (st > lastScrollTop) {
             // downscroll code
@@ -47,14 +47,32 @@
     });
   });
 
-  //TODO Quick creations menu, show on hover
   //Creations quick menu
   import { tiles } from "./Creations.svelte";
   onMount(() => {
-    var creations = document.getElementById("creationsLabel");
-    var creationsQuicMenu = document.getElementById("creationsQuickMenu");
+    var creationsQuickMenu: HTMLElement = document.getElementById(
+      "creationsQuickMenu"
+    ) as HTMLElement;
+    var creations: HTMLElement = document.getElementById(
+      "creationsLabel"
+    ) as HTMLElement;
 
-    creations?.addEventListener("mouseover", () => {});
+    document.addEventListener("scroll", () => {
+      creationsQuickMenu.classList.remove("flex");
+      creationsQuickMenu.classList.add("hidden");
+    });
+    document.addEventListener("keydown", (event) => {
+      if ((event.key == "Escape")) {
+        creationsQuickMenu.classList.remove("flex");
+        creationsQuickMenu.classList.add("hidden");
+      }
+    });
+    if (creations && creationsQuickMenu) {
+      creations?.addEventListener("click", () => {
+        creationsQuickMenu.classList.toggle("flex");
+        creationsQuickMenu.classList.toggle("hidden");
+      });
+    }
   });
 </script>
 
@@ -88,8 +106,19 @@
       <li class="cursor-pointer self-center">
         <a href="#about" class="md:hover:underline">About</a>
       </li>
-      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3]">
+      <li
+        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] flex flex-col"
+      >
         <a href="#creations" class="md:hover:underline">Creations</a>
+        <p class="absolute self-center mt-4" id="creationsLabel">&or;</p>
+        <div
+          id="creationsQuickMenu"
+          class="absolute mt-12 border-2 py-1 px-2 border-white rounded-md backdrop-blur-sm hidden flex-col"
+        >
+          {#each tiles as tile}
+            <a class="md:hover:underline" href={tile.link}>{tile.label}</a>
+          {/each}
+        </div>
       </li>
       <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3]">
         <a href="#contact" class="md:hover:underline">Contact me</a>
@@ -113,6 +142,11 @@
     #navName {
       display: inline-block;
       animation: slideIn 0.5s ease forwards;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #creationsLabel:hover ~ #creationsQuickMenu {
+      display: flex;
     }
   }
 </style>
