@@ -2,7 +2,6 @@
   import linkIcon from "$lib/images/link.png";
   import discordLogo from "$lib/images/discord.svg";
   import instagramLogo from "$lib/images/instagram.svg";
-  import githubLogo from "$lib/images/github.svg";
   import { onMount } from "svelte";
 
   var discord: string = "onlyhouska";
@@ -73,7 +72,7 @@
       <button
         on:click={() => copyInfo("discord")}
         id="discord"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -92,7 +91,7 @@
       <button
         on:click={() => copyInfo("instagram")}
         id="instagram"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -111,7 +110,7 @@
       <button
         on:click={() => copyInfo("github")}
         id="github"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -149,7 +148,7 @@
       </p>
       <p
         class="hidden md:block self-center md:mt-10 text-xl tracking-wide underline underline-offset-2"
-      >
+      > 
         Others
       </p>
       <div id="more" class="hidden w-fit md:flex md:self-center">
@@ -175,6 +174,7 @@
     #sectionHeader:hover #sectionLinkIcon {
       opacity: 1;
     }
+
     #discord:hover {
       background-position: right center;
       color: #fff;

@@ -5,13 +5,11 @@
 </script>
 
 <div class="app">
-  <Header />
-
   <main>
+    <Header />
     <slot />
+    <Footer />
   </main>
-
-  <Footer />
 </div>
 
 <style>
@@ -22,7 +20,7 @@
     background: #1a1919;
   }
   :global(html) {
-    font-family: "Kanit", sans-serif;
+    font-family: "Kanit", "Segoe UI";
     padding: 0;
     height: 100vh;
     user-select: none;

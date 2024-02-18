@@ -47,6 +47,7 @@
     });
   });
 
+  //TODO Quick creations menu, show on hover
   //Creations quick menu
   import { tiles } from "./Creations.svelte";
   onMount(() => {

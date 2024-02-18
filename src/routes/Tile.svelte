@@ -5,7 +5,8 @@
 </script>
 
 <tile
-  class="transition-all relative flex flex-col text-white mx-7 gap-2 border-gray-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide"
+  class="md:hover:scale-[1.04] text-center transition-all duration-500 relative text-white mx-7 gap-2 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide"
+  title={label}
 >
   <h2
     class="text-xl font-semibold tracking-wider mb-2 border-b-2 border-white/50 pb-2"
@@ -17,32 +18,34 @@
   </p>
   <a
     href={link}
-    class="text-sm hover:underline cursor-pointer text-white font-semibold border-white border-2 rounded-md px-2 py-1 w-fit z-20 mt-4 relative block m-auto"
+    class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 mt-4 relative block m-auto bg-orange-400/50"
     >Check more &gt;</a
   >
 </tile>
 
 <style>
   tile {
-    background-image: linear-gradient(
-      to right,
-      #232526 0%,
-      #414345 51%,
-      #232526 100%
-    );
     margin: 10px;
     padding: 15px 45px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    border-radius: 10px;
-    display: block;
   }
+  @media only screen and (min-width: 768px) {
+    a {
+      background-image: linear-gradient(
+        to right,
+        #ff512f 0%,
+        #f09819 51%,
+        #ff512f 100%
+      );
+      text-align: center;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+      display: block;
+    }
 
-  tile:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
+    a:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+    }
   }
 </style>
