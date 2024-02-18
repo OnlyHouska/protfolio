@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import Tile from "./Tile.svelte";
   import linkIcon from "$lib/images/link.png";
 
-  const tiles = [
+  export const tiles = [
     {
       label: "Frontools",
       description:
@@ -30,7 +30,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline"
+    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline md:hover:tracking-widest transition-all"
   >
     <a href="#creations" class="self-center">
       <img

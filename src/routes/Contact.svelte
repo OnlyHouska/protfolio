@@ -53,7 +53,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline"
+    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline md:hover:tracking-widest transition-all"
   >
     <a href="#contact" class="self-center">
       <img
@@ -138,10 +138,39 @@
         </p>
       </button>
     </social>
+
+    <other class="flex flex-col gap-4 md:gap-1 md:justify-center">
+      <p
+        id="showMore"
+        class="underline decoration-dotted text-[#dedcdc] underline-offset-2 mt-3 after:content-['more'] transition-all w-fit cursor-pointer md:hidden"
+        title="Show More"
+      >
+        &or; Show&nbsp;
+      </p>
+      <p
+        class="hidden md:block self-center md:mt-10 text-xl tracking-wide underline underline-offset-2"
+      >
+        Others
+      </p>
+      <div id="more" class="hidden w-fit md:flex md:self-center">
+        <p>
+          <span class="mr-1 font-semibold"> Email: </span>
+          kocandajan488&commat;gmail.com
+        </p>
+      </div>
+    </other>
   </div>
 </section>
 
 <style>
+  @media only screen and (max-width: 768px) {
+    #showMore:hover ~ #more {
+      display: flex;
+    }
+    #showMore:hover::after {
+      content: "less";
+    }
+  }
   @media only screen and (min-width: 768px) {
     #sectionHeader:hover #sectionLinkIcon {
       opacity: 1;

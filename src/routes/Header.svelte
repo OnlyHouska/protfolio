@@ -47,7 +47,14 @@
     });
   });
 
-  //TODO FIX THE FUCKNIG HEADERž
+  //Creations quick menu
+  import { tiles } from "./Creations.svelte";
+  onMount(() => {
+    var creations = document.getElementById("creationsLabel");
+    var creationsQuicMenu = document.getElementById("creationsQuickMenu");
+
+    creations?.addEventListener("mouseover", () => {});
+  });
 </script>
 
 <header>
@@ -69,26 +76,42 @@
     class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 bg-[#1a1919] py-2 lg:hover:opacity-90 lg:h-20"
   >
     <div class="flex flex-row gap-4 self-center">
-      <img src={logo} alt="Logo" class="h-12 lg:h-14" />
-      <p class="relative self-center lg:text-xl">OnlyHouska</p>
+      <img src={logo} alt="Logo" class="hidden md:inline md:h-12 lg:h-14" />
+      <p id="navName" class="relative self-center lg:text-xl">OnlyHouska</p>
     </div>
 
     <ul
+      id="headerItems"
       class="flex flex-row gap-3 text-[#dedcdc] font-normal text-base lg:text-lg"
     >
-      <li class="cursor-pointer self-center md:hover:underline">
-        <a href="#about">About</a>
+      <li class="cursor-pointer self-center">
+        <a href="#about" class="md:hover:underline">About</a>
       </li>
-      <li
-        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline"
-      >
-        <a href="#creations">Creations</a>
+      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3]">
+        <a href="#creations" class="md:hover:underline">Creations</a>
       </li>
-      <li
-        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] md:hover:underline"
-      >
-        <a href="#contact">Contact me</a>
+      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3]">
+        <a href="#contact" class="md:hover:underline">Contact me</a>
       </li>
     </ul>
   </nav>
 </header>
+
+<style>
+  @media only screen and (min-width: 768px) {
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    #navName {
+      display: inline-block;
+      animation: slideIn 0.5s ease forwards;
+    }
+  }
+</style>
