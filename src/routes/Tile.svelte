@@ -13,12 +13,12 @@
   >
     {label}
   </h2>
-  <p>
+  <p class="text-wrap overflow-hidden max-h-48 overflow-y-auto">
     {description}
   </p>
   <a
     href={link}
-    class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 mt-4 relative block m-auto bg-orange-400/50"
+    class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 mt-4 relative block m-auto"
     >Check more &gt;</a
   >
 </tile>
@@ -28,21 +28,21 @@
     margin: 10px;
     padding: 15px 45px;
   }
-  @media only screen and (min-width: 768px) {
-    a {
-      background-image: linear-gradient(
-        to right,
-        #ff512f 0%,
-        #f09819 51%,
-        #ff512f 100%
-      );
-      text-align: center;
-      transition: 0.5s;
-      background-size: 200% auto;
-      color: white;
-      display: block;
-    }
+  a {
+    background-image: linear-gradient(
+      to right,
+      #ff512f 0%,
+      #f09819 51%,
+      #ff512f 100%
+    );
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    display: block;
+  }
 
+  @media only screen and (min-width: 768px) {
     a:hover {
       background-position: right center; /* change the direction of the change here */
       color: #fff;

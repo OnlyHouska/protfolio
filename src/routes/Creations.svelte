@@ -4,7 +4,7 @@
 
   export const tiles = [
     {
-      label: "Frontools",
+      label: "Example",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/frontools",
