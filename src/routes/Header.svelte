@@ -77,11 +77,9 @@
 </script>
 
 <header>
-  <img
+  <div
     class="object-fill w-full h-full -z-50 bg-cover fixed inset-0 bg-main-bg"
-    alt=""
-    aria-hidden="true"
-  />
+  ></div>
 
   <a
     href="./"
