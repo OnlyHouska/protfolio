@@ -116,10 +116,12 @@
         </p>
         <div
           id="creationsQuickMenu"
-          class="absolute mt-12 border-2 py-1 px-2 border-white rounded-md backdrop-blur-sm hidden flex-col"
+          class="absolute mt-12 border-2 py-1 px-2 border-white rounded-md backdrop-blur-sm hidden flex-col overflow-y-auto max-h-32 max-w-22"
         >
           {#each tiles as tile}
-            <a class="md:hover:underline" href={tile.link}>{tile.label}</a>
+            <a class="md:hover:underline text-wrap" href={tile.link}
+              >{tile.label}</a
+            >
           {/each}
         </div>
       </li>

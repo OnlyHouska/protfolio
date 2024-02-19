@@ -4,19 +4,19 @@
 
   export const tiles = [
     {
-      label: "Example",
+      label: "Example #1",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/frontools",
     },
     {
-      label: "Example",
+      label: "Example #2",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/",
     },
     {
-      label: "Example",
+      label: "Example #3",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/",
