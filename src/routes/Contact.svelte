@@ -72,7 +72,7 @@
       <button
         on:click={() => copyInfo("discord")}
         id="discord"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px] max-w-[300px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -91,7 +91,7 @@
       <button
         on:click={() => copyInfo("instagram")}
         id="instagram"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px] max-w-[300px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -110,7 +110,7 @@
       <button
         on:click={() => copyInfo("github")}
         id="github"
-        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px]"
+        class="rounded-md shadow-lg py-1 px-2 gap-4 flex flex-row justify-center cursor-pointer md:h-20 md:flex-col md:px-4 md:py-2 lg:h-32 w-[55%] lg:w-[250px] max-w-[250px]"
         title="Copy"
       >
         <div class="flex flex-row gap-4 justify-center self-center">
@@ -162,6 +162,9 @@
 </section>
 
 <style>
+  button:active {
+    transform: scale(1.02);
+  }
   @media only screen and (max-width: 768px) {
     #showMore:hover ~ #more {
       display: flex;

@@ -5,7 +5,7 @@
 </script>
 
 <tile
-  class="md:hover:scale-[1.04] text-center transition-all duration-500 relative text-white mx-7 gap-2 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide"
+  class="md:hover:scale-[1.04] text-center transition-all duration-500 relative text-white mx-7 gap-2 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-80"
   title={label}
 >
   <h2
@@ -47,5 +47,8 @@
       background-position: right center; /* change the direction of the change here */
       color: #fff;
     }
+  }
+  a:active {
+    opacity: 0.8;
   }
 </style>

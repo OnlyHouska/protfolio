@@ -62,7 +62,7 @@
       creationsQuickMenu.classList.add("hidden");
     });
     document.addEventListener("keydown", (event) => {
-      if ((event.key == "Escape")) {
+      if (event.key == "Escape") {
         creationsQuickMenu.classList.remove("flex");
         creationsQuickMenu.classList.add("hidden");
       }
@@ -110,7 +110,12 @@
         class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] flex flex-col"
       >
         <a href="#creations" class="md:hover:underline">Creations</a>
-        <p class="absolute self-center mt-4" id="creationsLabel">&or;</p>
+        <p
+          class="absolute self-center mt-4 md:hover:translate-y-1 transition-all"
+          id="creationsLabel"
+        >
+          &or;
+        </p>
         <div
           id="creationsQuickMenu"
           class="absolute mt-12 border-2 py-1 px-2 border-white rounded-md backdrop-blur-sm hidden flex-col"
