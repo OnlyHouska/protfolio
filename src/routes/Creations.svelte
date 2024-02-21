@@ -43,7 +43,7 @@
     Creations
   </h1>
 
-  <tiles class="flex flex-row flex-wrap gap-10 w-full justify-center">
+  <tiles class="flex flex-row flex-wrap gap-5 md:gap-10 w-full justify-center">
     {#each tiles as tile}
       <Tile
         label={tile.label}

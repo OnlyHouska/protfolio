@@ -50,28 +50,30 @@
   //Creations quick menu
   import { tiles } from "./Creations.svelte";
   onMount(() => {
-    var creationsQuickMenu: HTMLElement = document.getElementById(
-      "creationsQuickMenu"
-    ) as HTMLElement;
-    var creations: HTMLElement = document.getElementById(
-      "creationsLabel"
-    ) as HTMLElement;
+    if (window.innerWidth >= 768) {
+      var creationsQuickMenu: HTMLElement = document.getElementById(
+        "creationsQuickMenu"
+      ) as HTMLElement;
+      var creations: HTMLElement = document.getElementById(
+        "creationsLabel"
+      ) as HTMLElement;
 
-    document.addEventListener("scroll", () => {
-      creationsQuickMenu.classList.remove("flex");
-      creationsQuickMenu.classList.add("hidden");
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key == "Escape") {
+      document.addEventListener("scroll", () => {
         creationsQuickMenu.classList.remove("flex");
         creationsQuickMenu.classList.add("hidden");
-      }
-    });
-    if (creations && creationsQuickMenu) {
-      creations?.addEventListener("click", () => {
-        creationsQuickMenu.classList.toggle("flex");
-        creationsQuickMenu.classList.toggle("hidden");
       });
+      document.addEventListener("keydown", (event) => {
+        if (event.key == "Escape") {
+          creationsQuickMenu.classList.remove("flex");
+          creationsQuickMenu.classList.add("hidden");
+        }
+      });
+      if (creations && creationsQuickMenu) {
+        creations?.addEventListener("click", () => {
+          creationsQuickMenu.classList.toggle("flex");
+          creationsQuickMenu.classList.toggle("hidden");
+        });
+      }
     }
   });
 </script>

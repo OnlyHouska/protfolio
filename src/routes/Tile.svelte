@@ -5,20 +5,20 @@
 </script>
 
 <tile
-  class="md:hover:scale-[1.04] text-center transition-all duration-500 relative text-white mx-7 gap-2 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-80"
+  class="flex flex-row md:flex-col md:hover:scale-[1.04] gap-3 text-center transition-all duration-500 relative text-white mx-7 md:gap-0 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-fit md:h-80"
   title={label}
 >
   <h2
-    class="text-xl font-semibold tracking-wider mb-2 border-b-2 border-white/50 pb-2"
+    class="text-xl font-semibold tracking-wider md:mb-2 md:border-b-2 border-white/50 md:pb-2"
   >
     {label}
   </h2>
-  <p class="text-wrap overflow-hidden max-h-48 overflow-y-auto">
+  <p class="hidden md:block text-wrap overflow-hidden max-h-48 overflow-y-auto">
     {description}
   </p>
   <a
     href={link}
-    class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 mt-4 relative block m-auto"
+    class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 md:mt-4 relative block m-auto"
     >Check more &gt;</a
   >
 </tile>
