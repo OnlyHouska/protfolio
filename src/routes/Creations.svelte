@@ -5,10 +5,10 @@
   //IMPORT images
   import linkIcon from "$lib/images/link.png";
 
-  //DB 
+  //DB
   export const tiles = [
     {
-      label: "Example #1",
+      label: "Code editor",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quibusdam officiis soluta suscipit harum quam animi modi! Consequuntur accusantium, molestiae vero laudantium ducimus error esse et voluptatem dolorum rem dicta!",
       link: "https://example.com/frontools",
