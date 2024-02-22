@@ -9,7 +9,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl md:hover:underline md:hover:tracking-widest transition-all"
+    class="w-fit flex flex-row -ml-9 gap-3 mt-32 mb-2 lg:text-3xl text-2xl lg:hover:underline lg:hover:tracking-widest transition-all"
   >
     <a href="#about" class="self-center">
       <img
@@ -34,7 +34,7 @@
 </section>
 
 <style>
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1024px) {
     #sectionHeader:hover #sectionLinkIcon {
       opacity: 1;
     }

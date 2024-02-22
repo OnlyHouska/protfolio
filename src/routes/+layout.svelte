@@ -4,6 +4,9 @@
 </script>
 
 <div class="app">
+  <div
+    class="object-fill w-full h-full -z-50 bg-cover fixed inset-0 bg-main-bg"
+  ></div>
   <main>
     <slot />
   </main>

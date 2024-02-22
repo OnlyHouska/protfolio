@@ -16,9 +16,10 @@
 </script>
 
 <tile
-  class="flex flex-row md:flex-col md:hover:scale-[1.04] gap-3 text-center transition-all duration-500 relative text-white mx-7 md:gap-0 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-fit md:h-80"
+  class="flex flex-row md:flex-col lg:hover:scale-[1.04] gap-3 text-center transition-all duration-500 relative text-white mx-7 md:gap-0 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-fit md:h-60 lg:h-80"
   title={usedLocalPath()}
 >
+  <p class="hidden md:block lg:hidden absolute left-3 top-1 text-xs text-white/80">Scroll &or;</p>
   <h2
     class="text-xl font-semibold tracking-wider md:mb-2 md:border-b-2 border-white/50 md:pb-2"
   >
@@ -53,7 +54,7 @@
     display: block;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1024px) {
     a:hover {
       background-position: right center; /* change the direction of the change here */
       color: #fff;

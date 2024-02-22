@@ -62,7 +62,7 @@
 >
   <h1
     id="sectionHeader"
-    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl md:hover:underline md:hover:tracking-widest transition-all"
+    class="w-fit flex flex-row -ml-9 gap-3 mb-2 lg:text-3xl text-2xl lg:hover:underline lg:hover:tracking-widest transition-all"
   >
     <a href="#contact" class="self-center">
       <img
@@ -175,7 +175,7 @@
   button:active {
     transform: scale(1.02);
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     #showMore:hover ~ #more {
       display: flex;
     }
@@ -183,7 +183,7 @@
       content: "less";
     }
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1024px) {
     #sectionHeader:hover #sectionLinkIcon {
       opacity: 1;
     }
