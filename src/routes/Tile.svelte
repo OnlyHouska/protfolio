@@ -1,8 +1,18 @@
-<script>
+<script lang="ts">
   //DEFINE export variables
-  export var label = "";
-  export var description = "";
-  export var link = "";
+  export var label: string = "\0";
+  export var description: string = "\0";
+  export var link: string = "\0";
+  export var local: boolean = false;
+
+  //FUNCTION check if local path is used
+  function usedLocalPath(): string {
+    return local ? getLocalPath() : link;
+  }
+  //FUNCTION get local path
+  function getLocalPath(): string {
+    return `./${label}/`;
+  }
 </script>
 
 <tile
