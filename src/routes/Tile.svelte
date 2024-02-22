@@ -17,7 +17,7 @@
 
 <tile
   class="flex flex-row md:flex-col md:hover:scale-[1.04] gap-3 text-center transition-all duration-500 relative text-white mx-7 md:gap-0 border-orange-300 border-[1px] rounded-lg p-5 pb-6 pt-8 backdrop-blur-sm max-w-[350px] w-full tracking-wide h-fit md:h-80"
-  title={label}
+  title={usedLocalPath()}
 >
   <h2
     class="text-xl font-semibold tracking-wider md:mb-2 md:border-b-2 border-white/50 md:pb-2"
