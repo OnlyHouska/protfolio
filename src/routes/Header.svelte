@@ -92,7 +92,7 @@
   </a>
 
   <nav
-    class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 bg-[#1a1919] py-2 lg:h-20"
+    class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 py-2 lg:h-20"
   >
     <div class="flex flex-row gap-4 self-center">
       <img src={logo} alt="Logo" class="hidden md:inline md:h-12 lg:h-14" />
@@ -135,9 +135,16 @@
 </header>
 
 <style>
+  :root {
+    --navBgOpacityOnHover: 0.9;
+  }
+
+  nav {
+    background-color: rgba(26, 25, 25, 1);
+  }
   @media only screen and (min-width: 768px) {
-    nav:hover:not(#creationsQuickMenu) {
-      opacity: .9;
+    nav:hover {
+      background-color: rgb(26, 25, 25, var(--navBgOpacityOnHover));
     }
     @keyframes slideIn {
       0% {
