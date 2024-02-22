@@ -1,4 +1,5 @@
 <script>
+  //IMPORT components
   import About from "./About.svelte";
   import Contact from "./Contact.svelte";
   import Creations from "./Creations.svelte"

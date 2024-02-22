@@ -1,19 +1,29 @@
 <script lang="ts">
+  //IMPORT essentials
+  import { onMount } from "svelte";
+
+  //IMPORT images
   import linkIcon from "$lib/images/link.png";
   import discordLogo from "$lib/images/discord.svg";
   import instagramLogo from "$lib/images/instagram.svg";
-  import { onMount } from "svelte";
 
+  //DEFINE contact strings
+  var discordRaw: string = "onlyhouska";
   var discord: string = "onlyhouska";
   var instagramRaw: string = "honza_kocanda";
   var instagram: string = `https://www.instagram.com/${instagramRaw}/`;
   var githubRaw: string = "onlyhouska";
   var github: string = `https://github.com/${githubRaw}`;
 
+  //DEFINE buttons
   var instagramButton: HTMLElement;
   var discordButton: HTMLElement;
   var githubButton: HTMLElement;
 
+  //FUNCTION copy contact info on click
+  /**
+   * @param platform
+   */
   function copyInfo(platform: string) {
     var copy: string = "undefined";
     var button: any;
@@ -21,7 +31,7 @@
     switch (platform) {
       case "discord":
         copy = discord;
-        reset = discord;
+        reset = discordRaw;
         button = discordButton;
         break;
       case "instagram":
@@ -148,7 +158,7 @@
       </p>
       <p
         class="hidden md:block self-center md:mt-10 text-xl tracking-wide underline underline-offset-2"
-      > 
+      >
         Others
       </p>
       <div id="more" class="hidden w-fit md:flex md:self-center">

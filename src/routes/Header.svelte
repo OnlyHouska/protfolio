@@ -1,12 +1,13 @@
 <script lang="ts">
-  //IMPORT FUNCTIONS
+  //IMPORT essentials
   import { onMount } from "svelte";
+  import { tiles } from "./Creations.svelte";
 
-  //IMPORT IMAGES
+  //IMPORT images
   import logo from "$lib/images/logo-code-unfolded.png";
   import goUpImage from "$lib/images/left-arrow.svg";
 
-  //Hide header on scroll && show "go up" button
+  //FUNCTION hide header on scroll && show "go up" button
   onMount(() => {
     var lastScrollTop: number = 0;
     var goUp: HTMLElement = document.getElementById("goUp") as HTMLElement;
@@ -47,8 +48,7 @@
     });
   });
 
-  //Creations quick menu
-  import { tiles } from "./Creations.svelte";
+  //FUNCTION show creations quick menu
   onMount(() => {
     if (window.innerWidth >= 768) {
       var creationsQuickMenu: HTMLElement = document.getElementById(
@@ -92,7 +92,7 @@
   </a>
 
   <nav
-    class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 bg-[#1a1919] py-2 lg:hover:opacity-90 lg:h-20"
+    class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 bg-[#1a1919] py-2 lg:h-20"
   >
     <div class="flex flex-row gap-4 self-center">
       <img src={logo} alt="Logo" class="hidden md:inline md:h-12 lg:h-14" />
@@ -136,6 +136,9 @@
 
 <style>
   @media only screen and (min-width: 768px) {
+    nav:hover:not(#creationsQuickMenu) {
+      opacity: .9;
+    }
     @keyframes slideIn {
       0% {
         transform: translateX(-50px);

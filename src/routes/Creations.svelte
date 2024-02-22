@@ -1,7 +1,11 @@
 <script lang="ts" context="module">
+  //IMPORT components
   import Tile from "./Tile.svelte";
+
+  //IMPORT images
   import linkIcon from "$lib/images/link.png";
 
+  //DB 
   export const tiles = [
     {
       label: "Example #1",
@@ -43,7 +47,7 @@
     Creations
   </h1>
 
-  <tiles class="flex flex-row flex-wrap gap-5 md:gap-10 w-full justify-center">
+  <tiles class="flex flex-row flex-wrap gap-5 md:gap-7 w-full justify-center">
     {#each tiles as tile}
       <Tile
         label={tile.label}

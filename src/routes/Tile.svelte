@@ -1,4 +1,5 @@
 <script>
+  //DEFINE export variables
   export var label = "";
   export var description = "";
   export var link = "";
@@ -19,7 +20,7 @@
   <a
     href={link}
     class="text-sm cursor-pointer text-white font-semibold border-orange-900 border-2 rounded-md px-2 py-1 w-fit z-20 md:mt-4 relative block m-auto"
-    >Check more &gt;</a
+    >Visit &gt;</a
   >
 </tile>
 

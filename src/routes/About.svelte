@@ -1,4 +1,5 @@
 <script>
+  //IMPORT images
   import linkIcon from "$lib/images/link.png";
 </script>
 
