@@ -133,7 +133,7 @@
   <a
     href="./"
     bind:this={goUp}
-    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 aspect-square -translate-y-40 transition-all opacity-90 h-8 md:h-10"
+    class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 aspect-square -translate-y-40 transition-all opacity-90 h-8 md:h-10 z-40"
   >
     <img src={goUpImage} alt="go up" class="rotate-90" />
   </a>
