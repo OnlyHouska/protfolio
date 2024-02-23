@@ -14,7 +14,7 @@
   var navMenu: HTMLElement;
 
   //FUNCTION open hamburger menu
-  onMount(() => {
+  onMount((): void => {
     //check if device is small size
     if (window.innerWidth < 768) {
       hamburgerMenuButton.addEventListener("click", toggleMenu);
@@ -37,7 +37,7 @@
 
       //CHECK for ESC button pres && scroll
       document.addEventListener("scroll", forceCloseMenu);
-      document.addEventListener("keydown", (event) => {
+      document.addEventListener("keydown", (event): void => {
         checkForEscapeButton(event);
       });
 
