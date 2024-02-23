@@ -5,7 +5,7 @@
   //IMPORT images
   import linkIcon from "$lib/images/link.png";
 
-  //DB
+  //DB .
   export const tiles = [
     {
       label: "Code editor",

@@ -7,6 +7,62 @@
   import logo from "$lib/images/logo-code-unfolded.png";
   import goUpImage from "$lib/images/left-arrow.svg";
 
+  //DEFINE elements
+  var hamburgerMenuButton: HTMLElement;
+  var hmbrFirst: HTMLElement;
+  var hmbrSecond: HTMLElement;
+  var navMenu: HTMLElement;
+
+  //FUNCTION open hamburger menu
+  onMount(() => {
+    //check if device is small size
+    if (window.innerWidth < 768) {
+      hamburgerMenuButton.addEventListener("click", toggleMenu);
+
+      //FUNCTION toggles classes to open/close hamburger menu
+      function toggleMenu(): void {
+        //rotate button
+        hmbrFirst.classList.toggle("rotate-45");
+        hmbrSecond.classList.toggle("-rotate-45");
+
+        //adjust button position
+        hmbrFirst.classList.toggle("translate-x-[3px]");
+        hmbrSecond.classList.toggle("-translate-y-2");
+        hmbrSecond.classList.toggle("translate-x-[3px]");
+
+        //toggle menu
+        navMenu.classList.toggle("hidden");
+        navMenu.classList.toggle("flex");
+      }
+
+      //CHECK for ESC button pres && scroll
+      document.addEventListener("scroll", forceCloseMenu);
+      document.addEventListener("keydown", (event) => {
+        checkForEscapeButton(event);
+      });
+
+      //FUNCTION check if escape button is pressed
+      function checkForEscapeButton(event: KeyboardEvent): void {
+        if (event.key == "Escape") forceCloseMenu();
+      }
+
+      //FUNCTION close menu on scroll && ESC button press
+      function forceCloseMenu(): void {
+        //remove menu classes
+        navMenu.classList.remove("flex");
+        navMenu.classList.add("hidden");
+
+        //reset button rotation + move
+        hmbrFirst.classList.remove("rotate-45");
+        hmbrSecond.classList.remove("-rotate-45");
+
+        hmbrFirst.classList.remove("translate-x-[3px]");
+        hmbrSecond.classList.remove("-translate-y-2");
+        hmbrSecond.classList.remove("translate-x-[3px]");
+      }
+    }
+  });
+
   //FUNCTION hide header on scroll && show "go up" button
   onMount(() => {
     var lastScrollTop: number = 0;
@@ -78,6 +134,7 @@
   });
 </script>
 
+<!-- TODO hamburger menu pro navbar na telefonu -->
 <header>
   <a
     href="./"
@@ -95,19 +152,33 @@
       <p id="navName" class="relative self-center lg:text-xl">OnlyHouska</p>
     </div>
 
+    <div
+      class="md:hidden flex flex-col gap-2 absolute right-10 self-center"
+      bind:this={hamburgerMenuButton}
+    >
+      <div
+        class="h-[1.5px] w-5 bg-white transition-all"
+        bind:this={hmbrFirst}
+      ></div>
+      <div
+        class="h-[1.5px] w-5 bg-white transition-all"
+        bind:this={hmbrSecond}
+      ></div>
+    </div>
     <ul
+      bind:this={navMenu}
       id="headerItems"
-      class="flex flex-row gap-3 text-[#dedcdc] font-normal text-base lg:text-lg"
+      class="md:flex-row gap-3 text-[#dedcdc] font-normal text-base lg:text-lg md:border-none md:w-auto md:h-auto md:p-0 md:backdrop-blur-none md:mt-0 md:flex py-1 px-2 flex-col border-2 h-fit w-fit rounded-md backdrop-blur-lg mt-14 hidden"
     >
       <li class="cursor-pointer self-center">
         <a href="#about" class="lg:hover:underline">About</a>
       </li>
       <li
-        class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3] flex flex-col"
+        class="cursor-pointer self-center md:border-l-2 pl-2 border-[#a3a3a3] flex flex-col"
       >
         <a href="#creations" class="lg:hover:underline">Creations</a>
         <p
-          class="absolute self-center mt-4 lg:hover:translate-y-1 transition-all"
+          class="absolute self-center mt-4 lg:hover:translate-y-1 transition-all hidden md:block"
           id="creationsLabel"
         >
           &or;
@@ -123,7 +194,9 @@
           {/each}
         </div>
       </li>
-      <li class="cursor-pointer self-center border-l-2 pl-2 border-[#a3a3a3]">
+      <li
+        class="cursor-pointer self-center md:border-l-2 pl-2 border-[#a3a3a3]"
+      >
         <a href="#contact" class="lg:hover:underline">Contact me</a>
       </li>
     </ul>
@@ -157,7 +230,7 @@
       animation: slideIn 0.5s ease forwards;
     }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
     #creationsLabel:hover ~ #creationsQuickMenu {
       display: flex;
     }
