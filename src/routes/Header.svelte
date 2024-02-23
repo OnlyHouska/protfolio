@@ -152,11 +152,11 @@
       bind:this={hamburgerMenuButton}
     >
       <div
-        class="h-[1.5px] w-5 bg-white transition-all"
+        class="h-[1.5px] w-5 bg-white transition-all duration-[400ms]"
         bind:this={hmbrFirst}
       ></div>
       <div
-        class="h-[1.5px] w-5 bg-white transition-all"
+        class="h-[1.5px] w-5 bg-white transition-all duration-[400ms]"
         bind:this={hmbrSecond}
       ></div>
     </div>
