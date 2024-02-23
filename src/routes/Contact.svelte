@@ -24,7 +24,7 @@
   /**
    * @param platform
    */
-  function copyInfo(platform: string) {
+  function copyInfo(platform: string): void {
     var copy: string = "undefined";
     var button: any;
     var reset: string;
@@ -47,7 +47,7 @@
     }
     if (button) {
       button.innerHTML = "Copied!";
-      setTimeout(() => {
+      setTimeout((): void => {
         button.innerHTML =
           window.innerWidth >= 768 ? "Username: " + reset : reset;
       }, 1500);

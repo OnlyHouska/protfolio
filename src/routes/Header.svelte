@@ -64,7 +64,7 @@
   });
 
   //FUNCTION hide header on scroll && show "go up" button
-  onMount(() => {
+  onMount((): void => {
     var lastScrollTop: number = 0;
     var goUp: HTMLElement = document.getElementById("goUp") as HTMLElement;
     var nav: HTMLElement = document.querySelector("nav") as HTMLElement;
@@ -76,7 +76,7 @@
 
     window.addEventListener(
       "scroll",
-      function () {
+      function (): void {
         var st = window.scrollY || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
         if (checkScrollHeight()) {
           if (st > lastScrollTop) {
@@ -94,10 +94,10 @@
       false
     );
 
-    goUp.addEventListener("mouseenter", () => {
+    goUp.addEventListener("mouseenter", (): void => {
       goUp.style.transform = "translateY(-10px)";
     });
-    goUp.addEventListener("mouseleave", () => {
+    goUp.addEventListener("mouseleave", (): void => {
       if (checkScrollHeight()) {
         goUp.style.transform = "translateY(0px)";
       }
@@ -105,7 +105,7 @@
   });
 
   //FUNCTION show creations quick menu
-  onMount(() => {
+  onMount((): void => {
     if (window.innerWidth >= 768) {
       var creationsQuickMenu: HTMLElement = document.getElementById(
         "creationsQuickMenu"
@@ -114,18 +114,18 @@
         "creationsLabel"
       ) as HTMLElement;
 
-      document.addEventListener("scroll", () => {
+      document.addEventListener("scroll", (): void => {
         creationsQuickMenu.classList.remove("flex");
         creationsQuickMenu.classList.add("hidden");
       });
-      document.addEventListener("keydown", (event) => {
+      document.addEventListener("keydown", (event): void => {
         if (event.key == "Escape") {
           creationsQuickMenu.classList.remove("flex");
           creationsQuickMenu.classList.add("hidden");
         }
       });
       if (creations && creationsQuickMenu) {
-        creations?.addEventListener("click", () => {
+        creations?.addEventListener("click", (): void => {
           creationsQuickMenu.classList.toggle("flex");
           creationsQuickMenu.classList.toggle("hidden");
         });

@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import github from "$lib/images/github.svg";
 
-  let year = new Date().getFullYear();
+  let year: number = new Date().getFullYear();
 </script>
 
 <footer
