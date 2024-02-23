@@ -7,7 +7,7 @@
   import logo from "$lib/images/logo-code-unfolded.png";
   import goUpImage from "$lib/images/left-arrow.svg";
 
-  //DEFINE elements
+  //DEFINE hamburger menu elements
   var hamburgerMenuButton: HTMLElement;
   var hmbrFirst: HTMLElement;
   var hmbrSecond: HTMLElement;
@@ -63,11 +63,12 @@
     }
   });
 
+  //DEFINE "scroll navbar" elements
+  var goUp: HTMLElement;
+  var nav: HTMLElement;
   //FUNCTION hide header on scroll && show "go up" button
   onMount((): void => {
     var lastScrollTop: number = 0;
-    var goUp: HTMLElement = document.getElementById("goUp") as HTMLElement;
-    var nav: HTMLElement = document.querySelector("nav") as HTMLElement;
 
     var checkScrollHeight = (): boolean => {
       if (window.scrollY > 80) return true;
@@ -104,16 +105,12 @@
     });
   });
 
+  //DEFINE QCM elements
+  var creationsQuickMenu: HTMLElement;
+  var creationsLabel: HTMLElement;
   //FUNCTION show creations quick menu
   onMount((): void => {
     if (window.innerWidth >= 768) {
-      var creationsQuickMenu: HTMLElement = document.getElementById(
-        "creationsQuickMenu"
-      ) as HTMLElement;
-      var creations: HTMLElement = document.getElementById(
-        "creationsLabel"
-      ) as HTMLElement;
-
       document.addEventListener("scroll", (): void => {
         creationsQuickMenu.classList.remove("flex");
         creationsQuickMenu.classList.add("hidden");
@@ -124,27 +121,25 @@
           creationsQuickMenu.classList.add("hidden");
         }
       });
-      if (creations && creationsQuickMenu) {
-        creations?.addEventListener("click", (): void => {
-          creationsQuickMenu.classList.toggle("flex");
-          creationsQuickMenu.classList.toggle("hidden");
-        });
-      }
+      creationsLabel.addEventListener("click", (): void => {
+        creationsQuickMenu.classList.toggle("flex");
+        creationsQuickMenu.classList.toggle("hidden");
+      });
     }
   });
 </script>
 
-<!-- TODO hamburger menu pro navbar na telefonu -->
 <header>
   <a
     href="./"
-    id="goUp"
+    bind:this={goUp}
     class="mr-5 right-0 fixed flex justify-center rounded-full bg-white/20 mt-20 aspect-square -translate-y-40 transition-all opacity-90 h-8 md:h-10"
   >
     <img src={goUpImage} alt="go up" class="rotate-90" />
   </a>
 
   <nav
+    bind:this={nav}
     class="justify-between font-semibold fixed text-lg inset-0 pl-4 pr-7 w-full flex flex-row z-40 text-[#a3a3a3] h-16 transition-all duration-300 py-2 lg:h-20"
   >
     <div class="flex flex-row gap-4 self-center">
@@ -180,11 +175,13 @@
         <p
           class="absolute self-center mt-4 lg:hover:translate-y-1 transition-all hidden md:block"
           id="creationsLabel"
+          bind:this={creationsLabel}
         >
           &or;
         </p>
         <div
           id="creationsQuickMenu"
+          bind:this={creationsQuickMenu}
           class="absolute mt-12 border-2 py-1 px-2 border-white rounded-md backdrop-blur-sm hidden flex-col overflow-y-auto max-h-32 max-w-22"
         >
           {#each tiles as tile}
