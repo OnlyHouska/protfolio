@@ -1,6 +1,7 @@
 <script lang="ts">
     //IMPORT ESSENTIALS
     import { onMount } from 'svelte';
+    import {categories} from "../lib/scripts/global";
 
     //DEFINE VARIABLES
     let menuVisible: boolean = false;
@@ -41,15 +42,11 @@
   {#if menuVisible}
     <div class="menu-dropdown">
       <ul>
-        <li>
-          <a href="#skills"># skills</a>
-        </li>
-        <li>
-          <a href="#projets"># projects</a>
-        </li>
-        <li>
-          <a href="#links"># links</a>
-        </li>
+        {#each categories as category}
+          <li>
+            <a href={`#${category}`}># {category}</a>
+          </li>
+        {/each}
       </ul>
     </div>
   {/if}
