@@ -1,4 +1,5 @@
 <script lang="ts">
+    //IMPORT COMPONENTS
     import Menu from "./menu.svelte";
 
     // import { onMount } from 'svelte';
@@ -46,6 +47,7 @@
 
   .header {
     position: fixed;
+    top: 0;
     animation: fold 800ms forwards $headerFoldDelay;
 
     background: var(--linearPrimarySecondary);

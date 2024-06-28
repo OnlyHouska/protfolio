@@ -1,23 +1,29 @@
 <script lang="ts">
+    //IMPORT ESSENTIALS
     import { onMount } from 'svelte';
 
+    //DEFINE VARIABLES
     let menuVisible: boolean = false;
 
+    //DEFINE ELEMENTS
     let menuButton: HTMLElement;
     let menu: HTMLElement;
 
     onMount(main);
 
+    //FUNCTION TO RUN ON MOUNT
     function main() {
-      if (menuButton)
-        menuButton.addEventListener('click', toggleMenu);
+      //TOGGLE MENU ON CLICK
+      menuButton.addEventListener('click', toggleMenu);
 
+      //HIDE MENU ON SCROLL
       document.body.addEventListener('scroll', () => {
         if (menuVisible)
           toggleMenu();
       });
     }
 
+    //TOGGLE MENU VISIBILITY
     function toggleMenu() {
       if (menuButton) {
         menuVisible = !menuVisible;

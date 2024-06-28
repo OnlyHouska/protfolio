@@ -1,4 +1,5 @@
 <script lang="ts">
+    //IMPORT COMPONENTS
     import Header from "./components/Header.svelte";
 </script>
 
@@ -6,5 +7,4 @@
     <Header />
 </main>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
