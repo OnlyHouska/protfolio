@@ -4,7 +4,7 @@
 </script>
 
 <main class="category__header">
-  <h1 class="category__header-title" bind:this={title}>
+  <h1 class="category__header-title">
     # {titleText}
   </h1>
   <div class="category__header-underline"></div>
