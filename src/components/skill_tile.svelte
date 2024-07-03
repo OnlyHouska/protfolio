@@ -47,7 +47,7 @@
       &-title {
         margin-top: 0.5rem;
         text-align: center;
-        font-size: 1em;
+        font-size: var(--font-size-sm);
         width: 100%;
       }
       .skills__tile-underline {
