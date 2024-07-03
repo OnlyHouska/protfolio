@@ -21,14 +21,12 @@
     gap: 1rem;
     align-content: center;
 
-    margin-top: 3rem;
-
     &__background-line {
+      align-self: center;
       z-index: -50;
       position: absolute;
       width: 100%;
       left: 0;
-      top: 50%;
       height: 2rem;
       background-color: var(--primary);
       opacity: .25;

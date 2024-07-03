@@ -12,22 +12,26 @@
   --linearPrimarySecondary: linear-gradient(to bottom right, #550264, #8f008a);
   --linearPrimaryAccent: linear-gradient(#550264, #fbb1f6);
   --linearSecondaryAccent: linear-gradient(#8f008a, #fbb1f6);
+  --linearLoading: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);;
 
   --radius: 5px;
 
-  --font-size-2xl: 6rem;
-  --font-size-xl: 4rem;
-  --font-size-lg: 2.5rem;
-  --font-size-md: 2rem;
-  --font-size-sm: 1.5rem;
-  --font-size-xs: 1rem;
+  --font-size-title: 6rem;
+  --font-size-2xl: 60px;
+  --font-size-xl: 40px;
+  --font-size-lg: 30px;
+  --font-size-md: 20px;
+  --font-size-sm: 14px;
+  --font-size-xs: 10px;
 
+  --transition-duration : 300ms;
 }
 
 /*!MAIN*/
 html {
   font-family: "Kanit", sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
 
   background-color: var(--background-color);
@@ -48,5 +52,6 @@ body {
 }
 
 a {
-  color: var(--secondary)
+  color: white;
+  text-decoration: none;
 }

@@ -1,8 +1,8 @@
 <script lang="ts">
   //IMPORT COMPONENTS
   import Header from "./category_header.svelte";
-  import Skills from "./skills.svelte";
-  import Projects from "./projects.svelte";
+  import Skills from "./Skills.svelte";
+  import Projects from "./Projects.svelte";
   import Links from "./links.svelte";
   
   //DEFINE VARIABLES

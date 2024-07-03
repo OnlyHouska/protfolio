@@ -1,0 +1,16 @@
+{
+  "Frontools": {
+    "id": 0,
+    "version": "not-finished",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec purus.",
+    "link": "https://example.com/",
+    "image": "https://placehold.co/150x100"
+  },
+  "Space Invaders": {
+    "id": 1,
+    "version": "0.1.5.1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec purus.",
+    "link": "https://only-space-invaders.vercel.app/",
+    "image": "https://placehold.co/150x100"
+  }
+}

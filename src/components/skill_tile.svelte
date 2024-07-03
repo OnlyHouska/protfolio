@@ -37,7 +37,7 @@
       flex-direction: column;
       align-items: center;
       * {
-        transition: all 300ms;
+        transition: all var(--transition-duration);
       }
       &-image {
         border-radius: var(--radius);

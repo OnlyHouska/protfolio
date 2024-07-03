@@ -13,6 +13,7 @@
 <style lang="scss">
   .category {
     &__header {
+      margin-bottom: 1rem;
       &-underline {
         height: 1px;
         width: 100%;

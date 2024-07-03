@@ -1,19 +1,30 @@
 <script lang="ts">
     //IMPORT COMPONENTS
     import Menu from "./menu.svelte";
+    import Loading from "./loading.svelte";
 
-    // import { onMount } from 'svelte';
+    //DEFINE VARIABLES
+    let headerFolder: boolean = false;
+
+    setTimeout(() => {
+        headerFolder = true;
+    }, 2000);
 </script>
 
 <main class="header">
-    <h1 class="header-title">
-        only
-    </h1>
-    <p class="header-text">
-        hey<br>
-        look around and hit me up!
-    </p>
-    <Menu />
+  <h1 class="header-title">
+    only
+  </h1>
+  <p class="header-text">
+    hey<br>
+    look around and hit me up!
+  </p>
+  {#if !headerFolder}
+    <div class="header-loading">
+      <Loading />
+    </div>
+  {/if}
+  <Menu />
 </main>
 
 <style lang="scss">
@@ -46,6 +57,7 @@
   }
 
   .header {
+    z-index: 50;
     position: fixed;
     top: 0;
     animation: fold 800ms forwards $headerFoldDelay;
@@ -60,16 +72,20 @@
     justify-content: center;
     align-items: center;
 
+    &-loading {
+      margin-top: 5rem;
+    }
+
     &-title {
-      font-size: var(--font-size-2xl);
+      font-size: var(--font-size-title);
       animation: moveTitle 800ms forwards $headerFoldDelay;
     }
 
     &-text {
-      margin-top: 10rem;
+      margin-top: 6rem;
       position: absolute;
       text-align: center;
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-md);
       animation: moveText 800ms forwards $headerFoldDelay;
     }
   }

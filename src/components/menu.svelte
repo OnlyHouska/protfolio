@@ -105,7 +105,7 @@
       width: 100%;
       height: 2px;
       background: var(--text-color);
-      transition: 300ms;
+      transition: all var(--transition-duration);
     }
   }
 

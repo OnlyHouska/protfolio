@@ -31,6 +31,6 @@
         flex-direction: column;
         gap: 1rem;
 
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
 </style>
