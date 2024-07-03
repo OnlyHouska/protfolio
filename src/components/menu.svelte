@@ -76,7 +76,7 @@
       border: white 1px solid;
       border-radius: var(--radius);
       background: var(--secondary);
-      ul {
+      ul, ol {
         list-style: none;
         text-align: center;
         li {
